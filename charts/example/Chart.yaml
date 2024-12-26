@@ -1,6 +1,6 @@
 apiVersion: v2
 name: example-node
-description: Express example node
+description: Express example node v1.2
 
 # A chart can be either an 'application' or a 'library' chart.
 #
