@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   name: "example-service"
-  type: ClusterIP
+  type: NodePort
   port: 3000
   node_port: 30010
   protocol: TCP
