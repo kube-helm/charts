@@ -3,6 +3,16 @@ entries:
   example-node:
   - apiVersion: v2
     appVersion: latest
+    created: "2024-12-26T10:07:50.360288024Z"
+    description: Express example node v1.2
+    digest: 7afd6720f6719f33a59eb84303bbf5a3d48ecaf894a992bae1d237aef90e7bff
+    name: example-node
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/example-node-0.1.2/example-node-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: latest
     created: "2024-12-26T09:43:09.758712129Z"
     description: Express example node v1.2
     digest: 5959befeac23417f768ebb50d471b119c89698255ffc425b36630d40119cfd73
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/example-node-0.1.1/example-node-0.1.1.tgz
     version: 0.1.1
-generated: "2024-12-26T09:43:09.75871806Z"
+generated: "2024-12-26T10:07:50.360302381Z"
