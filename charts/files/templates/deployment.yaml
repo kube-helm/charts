@@ -1,0 +1,118 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "user.fullname" . }}
+  labels:
+    {{- include "user.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "user.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "user.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "user.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      initContainers:
+        - name: env
+          image: infisical/cli:0.32.0
+          command:
+            - /bin/sh
+            - -c
+            - 'export INFISICAL_API_URL=${INFISICAL_API_URL} && export INFISICAL_TOKEN=$(infisical login --method=universal-auth --client-id=${INFISICAL_CLIENT_ID} --client-secret=${INFISICAL_CLIENT_SECRET} --silent --plain) && infisical export --projectId=${INFISICAL_PROJECT_ID} --env=${INFISICAL_ENV} --format=dotenv --path=/backend > /mnt/volume/.env'
+          env:
+            - name: INFISICAL_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_API_URL
+            - name: INFISICAL_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_ENV
+            - name: INFISICAL_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_CLIENT_ID
+            - name: INFISICAL_CLIENT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_CLIENT_SECRET
+            - name: INFISICAL_PROJECT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: SERVER_FILE_PROJECT_ID
+          volumeMounts:
+            - mountPath: /mnt/volume
+              name: storage-shared
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+{{/*          command:*/}}
+{{/*            - /bin/sh*/}}
+{{/*            - -c*/}}
+{{/*            - 'cat /app/.env'*/}}
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+{{/*          livenessProbe:*/}}
+{{/*            httpGet:*/}}
+{{/*              path: /*/}}
+{{/*              port: http*/}}
+{{/*          readinessProbe:*/}}
+{{/*            httpGet:*/}}
+{{/*              path: /*/}}
+{{/*              port: http*/}}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /public/.env
+              name: storage-shared
+              subPath: .env
+{{/*      containers:*/}}
+{{/*        - image: alpine*/}}
+{{/*          name: test-container*/}}
+{{/*          command:*/}}
+{{/*            - /bin/sh*/}}
+{{/*            - -c*/}}
+{{/*            - 'cat /app/files.env'*/}}
+{{/*          volumeMounts:*/}}
+{{/*            - mountPath: /app*/}}
+{{/*              name: storage-shared*/}}
+      volumes:
+        - name: storage-shared
+          emptyDir: {}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
