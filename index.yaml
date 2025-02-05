@@ -21,4 +21,39 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/example-node-0.1.1/example-node-0.1.1.tgz
     version: 0.1.1
-generated: "2024-12-26T10:07:50.360302381Z"
+  server-files-public:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-05T04:58:49.712618104Z"
+    description: A Helm chart for Kubernetes of server-files-public
+    digest: 65e3bd6aa1d1debef8a077d4f40d4800fd723137747306b2706e9fa302e68c48
+    name: server-files-public
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/server-files-public-0.1.0/server-files-public-0.1.0.tgz
+    version: 0.1.0
+  user:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-05T04:58:49.890940722Z"
+    dependencies:
+    - name: web-user
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-user-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-user
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-user-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 5966e2b4532af9f07cacedfafa02c3fe8ccffacd874234d625b31a1989de38ce
+    name: user
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-02-05T04:58:49.890947935Z"
