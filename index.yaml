@@ -3,6 +3,29 @@ entries:
   account:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-10T15:38:48.698939031Z"
+    dependencies:
+    - name: web-account
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-account-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-account
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-account-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 6823945baf83083a5593a4390497b1a33c1ca41417921bd859d608d7cdc94d03
+    name: account
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/account-0.1.2/account-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T14:20:23.750981105Z"
     dependencies:
     - name: web-account
@@ -88,6 +111,29 @@ entries:
     - https://github.com/kube-helm/charts/releases/download/example-node-0.1.1/example-node-0.1.1.tgz
     version: 0.1.1
   gaming:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T15:38:48.866512819Z"
+    dependencies:
+    - name: web-gaming
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-gaming-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-gaming
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-gaming-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: ab62270bb3e8a14ef3fe7718e4fcf788d5e740fc67317a8ddbc2d44cd226c9ff
+    name: gaming
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/gaming-0.1.2/gaming-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-02-10T14:20:23.987010977Z"
@@ -231,4 +277,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-10T14:22:17.750773492Z"
+generated: "2025-02-10T15:38:48.866533928Z"
