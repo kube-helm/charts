@@ -27,6 +27,41 @@ spec:
       serviceAccountName: {{ include "web-client.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
+
+      initContainers:
+        - name: env
+          image: infisical/cli:0.32.0
+          command:
+            - /bin/sh
+            - -c
+            - 'export INFISICAL_API_URL=${INFISICAL_API_URL} && export INFISICAL_TOKEN=$(infisical login --method=universal-auth --client-id=${INFISICAL_CLIENT_ID} --client-secret=${INFISICAL_CLIENT_SECRET} --silent --plain) && infisical export --projectId=${INFISICAL_PROJECT_ID} --env=${INFISICAL_ENV} --format=dotenv --path=/client > /mnt/volume/.env'
+          env:
+            - name: INFISICAL_API_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_API_URL
+            - name: INFISICAL_ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_ENV
+            - name: INFISICAL_CLIENT_ID
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_CLIENT_ID
+            - name: INFISICAL_CLIENT_SECRET
+              valueFrom:
+                configMapKeyRef:
+                  name: application-configs
+                  key: INFISICAL_CLIENT_SECRET
+            - name: INFISICAL_PROJECT_ID
+              value: {{ .Values.global.infisical_project_id }}
+          volumeMounts:
+            - mountPath: /mnt/volume
+              name: storage-shared
+
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
@@ -43,6 +78,13 @@ spec:
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - mountPath: /app/.env
+              name: storage-shared
+              subPath: .env
+      volumes:
+        - name: storage-shared
+          emptyDir: {}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
