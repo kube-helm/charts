@@ -3,6 +3,29 @@ entries:
   account:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-10T15:46:30.420304127Z"
+    dependencies:
+    - name: web-account
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-account-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-account
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-account-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 0112444c3b8594ff8d322d2b70e4e895144a6b718e6d8254b7007f4fed313ac8
+    name: account
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/account-0.1.3/account-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T15:38:48.698939031Z"
     dependencies:
     - name: web-account
@@ -277,4 +300,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-10T15:38:48.866533928Z"
+generated: "2025-02-10T15:46:30.420330166Z"
