@@ -38,10 +38,10 @@ securityContext: {}
 
 service:
   type: NodePort
-  port: 3000
+  port: 3001
   protocol: TCP
   node_port: 30600
-  target_port: 3000
+  target_port: 3001
 
 ingress:
   enabled: false
