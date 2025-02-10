@@ -1,0 +1,19 @@
+apiVersion: v2
+name: ecommerce
+description: A Helm chart for Kubernetes
+type: application
+version: 0.1.0
+appVersion: "1.16.0"
+dependencies:
+  - name: web-ecommerce
+    version: 0.1.0
+    repository: file://./charts/web-client
+  - name: server-ecommerce-public
+    version: 0.1.0
+    repository: file://./charts/server-public
+  - name: web-admin-ecommerce
+    version: 0.1.0
+    repository: file://./charts/web-admin
+  - name: server-ecommerce-admin
+    version: 0.1.0
+    repository: file://./charts/server-admin
