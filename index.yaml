@@ -1,5 +1,53 @@
 apiVersion: v1
 entries:
+  account:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:20:23.750981105Z"
+    dependencies:
+    - name: web-account
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-account-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-account
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-account-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 09b3d1f9ece78a76cf280f784b195bf87a772c6b2664b8108284f026c5c728b4
+    name: account
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/account-0.1.0/account-0.1.0.tgz
+    version: 0.1.0
+  ecommerce:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:20:23.866069006Z"
+    dependencies:
+    - name: web-ecommerce
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-ecommerce-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-ecommerce
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-ecommerce-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: fe0395eba36f11350ce3c01920b927650cd9eba604e414cad213c7c4f8b48e19
+    name: ecommerce
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/ecommerce-0.1.0/ecommerce-0.1.0.tgz
+    version: 0.1.0
   example-node:
   - apiVersion: v2
     appVersion: latest
@@ -21,6 +69,87 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/example-node-0.1.1/example-node-0.1.1.tgz
     version: 0.1.1
+  gaming:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:20:23.987010977Z"
+    dependencies:
+    - name: web-gaming
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-gaming-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-gaming
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-gaming-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 9b4750ce59760ac9d6818a1faaf6de52b70df20980d1512018049b54cb4a65db
+    name: gaming
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/gaming-0.1.0/gaming-0.1.0.tgz
+    version: 0.1.0
+  landing-page:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:20:24.116186856Z"
+    dependencies:
+    - name: web-landing-page
+      repository: file://./charts/web-client
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 12a2bc45cd0b719a999f2fedaf9d1c8ae076a4e9234ad0e630f7aee2e18130ab
+    name: landing-page
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/landing-page-0.1.0/landing-page-0.1.0.tgz
+    version: 0.1.0
+  manage-site:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:20:24.253968345Z"
+    dependencies:
+    - name: web-manage-site
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-manage-site-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-manage-site
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-manage-site-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 207dba79a0a9696594f589ff2c4ae7e93fd0acb192a6eabc9b9fc3cfffba45a8
+    name: manage-site
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/manage-site-0.1.0/manage-site-0.1.0.tgz
+    version: 0.1.0
+  payment:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:20:24.377792273Z"
+    dependencies:
+    - name: server-payment-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: server-payment-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 02c0ffe36e1ba8aec588a2ae12faa2b81025005a88842db7cdf535e17160ae48
+    name: payment
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/payment-0.1.0/payment-0.1.0.tgz
+    version: 0.1.0
   server-files-public:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -84,4 +213,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-10T14:04:18.891305822Z"
+generated: "2025-02-10T14:20:24.589644699Z"
