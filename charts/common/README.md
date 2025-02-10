@@ -7,7 +7,7 @@
 
 ## Add repo
 ```
-helm repo add affiliate-product 
+helm repo add affiliate-product https://kube-helm.github.io/charts/
 ```
 
 ## Values chart
