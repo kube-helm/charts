@@ -136,6 +136,29 @@ entries:
   gaming:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-10T16:06:10.189328179Z"
+    dependencies:
+    - name: web-gaming
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-gaming-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-gaming
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-gaming-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 65a644df5a2035b42ff82767433c57696870457689b143f69973a337564b5c9c
+    name: gaming
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/gaming-0.1.3/gaming-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T15:38:48.866512819Z"
     dependencies:
     - name: web-gaming
@@ -261,6 +284,23 @@ entries:
   staff:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-10T16:06:10.33473213Z"
+    dependencies:
+    - name: web-admin-staff
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-staff-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 3ead876b826d3164eb06e3201d56fdc08fbbb6b09e686dea7d326713e754ddb9
+    name: staff
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/staff-0.1.1/staff-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T14:04:18.891295714Z"
     dependencies:
     - name: web-admin-staff
@@ -300,4 +340,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-10T15:46:30.420330166Z"
+generated: "2025-02-10T16:06:10.334775581Z"
