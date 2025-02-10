@@ -2,7 +2,7 @@ global:
   env: develop
   image:
     repository: hub.viewboost.vn/affiliate-products
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     tag: "latest"
   infisical_project_id: "782efada-f435-4cd6-a020-827d9226c5c6"
   imagePullSecrets:

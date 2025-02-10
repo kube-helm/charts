@@ -16,7 +16,7 @@ global:
   env: develop | release
   image:
     repository: <repo>
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
     tag: "latest"
   infisical_project_id: <project id in infisical>
   imagePullSecrets:
