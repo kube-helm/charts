@@ -1,4 +1,4 @@
-# CHART FOR USER
+# CHART FOR STAFF
 
 ## Dependencies
 - Using Infisical
