@@ -37,10 +37,11 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 4000
   protocol: TCP
   target_port: 4000
+  node_port: 30503
 
 ingress:
   enabled: false

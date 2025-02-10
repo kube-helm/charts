@@ -1,0 +1,9 @@
+global:
+  env: develop
+  image:
+    repository: hub.viewboost.vn/affiliate-products
+    pullPolicy: IfNotPresent
+    tag: "latest"
+  infisical_project_id: "5ca1ca58-5c40-4e17-aa7c-810d65221e75"
+  imagePullSecrets:
+    - name: registry-affiliate-products

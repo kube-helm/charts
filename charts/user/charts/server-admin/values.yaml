@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: registry.viewboost.vn/affiliate-products
+  repository: hub.viewboost.vn/affiliate-products
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -37,8 +37,9 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: ClusterIP
+  type: NodePort
   port: 3000
+  node_port: 30500
   protocol: TCP
   target_port: 3000
 

@@ -5,13 +5,13 @@
 replicaCount: 1
 
 image:
-  repository: registry.viewboost.vn/affiliate-products/server-files-public-release
+  repository: hub.viewboost.vn/affiliate-products/server-files-public-release
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
   tag: "latest"
 
 imagePullSecrets:
-  - name: registry-vcreator
+  - name: registry-affiliate-products
 nameOverride: ""
 fullnameOverride: ""
 
