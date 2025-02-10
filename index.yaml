@@ -42,6 +42,24 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/server-files-public-0.1.0/server-files-public-0.1.0.tgz
     version: 0.1.0
+  staff:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:04:18.891295714Z"
+    dependencies:
+    - name: web-admin-staff
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-staff-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 1aba50388e301e6e785c8a458de877b8ca30801e75247cc6518ea879ca0a0e19
+    name: staff
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/staff-0.1.0/staff-0.1.0.tgz
+    version: 0.1.0
   user:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -66,4 +84,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-10T12:57:07.183989951Z"
+generated: "2025-02-10T14:04:18.891305822Z"
