@@ -24,6 +24,16 @@ entries:
   server-files-public:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-02-10T12:57:07.183976526Z"
+    description: A Helm chart for Kubernetes of server-files-public
+    digest: 10ae29eda4f5d8b73637cd906850c82680cc15465e24a8781e0fb29ea870b28e
+    name: server-files-public
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/server-files-public-0.1.1/server-files-public-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-05T04:58:49.712618104Z"
     description: A Helm chart for Kubernetes of server-files-public
     digest: 65e3bd6aa1d1debef8a077d4f40d4800fd723137747306b2706e9fa302e68c48
@@ -56,4 +66,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-05T04:58:49.890947935Z"
+generated: "2025-02-10T12:57:07.183989951Z"
