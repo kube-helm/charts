@@ -1,4 +1,4 @@
-# CHART FOR COMMON
+# CHART FOR PAYMENT
 
 ## Dependencies
 - Using Infisical
@@ -25,5 +25,5 @@ global:
 
 ## Install chart
 ```
-helm upgrade --install affiliate-product/common
+helm upgrade --install affiliate-product/payment
 ```

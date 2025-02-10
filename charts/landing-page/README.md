@@ -1,4 +1,4 @@
-# CHART FOR USER
+# CHART FOR LANDING PAGE
 
 ## Dependencies
 - Using Infisical
@@ -25,5 +25,5 @@ global:
 
 ## Install chart
 ```
-
+helm upgrade --install affiliate-product/landing-page
 ```

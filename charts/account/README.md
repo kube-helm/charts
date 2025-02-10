@@ -1,4 +1,4 @@
-# CHART FOR USER
+# CHART FOR ACCOUNT
 
 ## Dependencies
 - Using Infisical
@@ -7,7 +7,7 @@
 
 ## Add repo
 ```
-helm repo add affiliate-product 
+helm repo add affiliate-product https://kube-helm.github.io/charts/
 ```
 
 ## Values chart
@@ -25,5 +25,5 @@ global:
 
 ## Install chart
 ```
-
+helm upgrade --install affiliate-product/account
 ```
