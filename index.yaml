@@ -24,6 +24,24 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/account-0.1.0/account-0.1.0.tgz
     version: 0.1.0
+  common:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-02-10T14:22:17.605577795Z"
+    dependencies:
+    - name: server-common-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: server-common-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 547f3f82ace260e5c4c2300333d1b0d3c0faa908620cb8f5eaa297e86f581409
+    name: common
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/common-0.1.0/common-0.1.0.tgz
+    version: 0.1.0
   ecommerce:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -213,4 +231,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-10T14:20:24.589644699Z"
+generated: "2025-02-10T14:22:17.750773492Z"
