@@ -3,6 +3,29 @@ entries:
   account:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-04-05T08:37:23.81349628Z"
+    dependencies:
+    - name: web-account
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-account-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-account
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-account-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 943df344fdc8f5067e1d4748d2709107ad17020899c81ab8bfd48dba20eb5b4b
+    name: account
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/account-0.1.10/account-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T16:41:42.747728122Z"
     dependencies:
     - name: web-account
@@ -96,6 +119,23 @@ entries:
   common:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-04-05T08:37:23.937520957Z"
+    dependencies:
+    - name: server-common-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: server-common-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 977396131da6a46864d6d503bd22db96d7b83b85e191825f3e16849f4ccaed2b
+    name: common
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/common-0.1.10/common-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T16:41:42.93233358Z"
     dependencies:
     - name: server-common-public
@@ -128,7 +168,45 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/common-0.1.0/common-0.1.0.tgz
     version: 0.1.0
+  dora:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.087461472Z"
+    dependencies:
+    - name: web-landing-page
+      repository: file://./charts/web-client
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 8ef8dfea7aa26137bc5e7bd978a04da41281efc5c7bc0b9ff9024f92d7304c69
+    name: dora
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/dora-0.1.1/dora-0.1.1.tgz
+    version: 0.1.1
   ecommerce:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.206959719Z"
+    dependencies:
+    - name: web-ecommerce
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-ecommerce-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-ecommerce
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-ecommerce-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: d7a16c5b9dec4a02ab57fd16d2ecd599921b227ec0c38cc388302915a7178ebf
+    name: ecommerce
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/ecommerce-0.1.10/ecommerce-0.1.10.tgz
+    version: 0.1.10
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-02-10T16:41:43.138575303Z"
@@ -197,6 +275,29 @@ entries:
     - https://github.com/kube-helm/charts/releases/download/example-node-0.1.1/example-node-0.1.1.tgz
     version: 0.1.1
   gaming:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.327157645Z"
+    dependencies:
+    - name: web-gaming
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-gaming-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-gaming
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-gaming-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: ae1275286c9800c4f13e60812e983625f4fea0f4d8676c836d68358ab963ac21
+    name: gaming
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/gaming-0.1.10/gaming-0.1.10.tgz
+    version: 0.1.10
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-02-10T16:41:43.353090482Z"
@@ -403,6 +504,16 @@ entries:
   server-files-public:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.447178093Z"
+    description: A Helm chart for Kubernetes of server-files-public
+    digest: 997e55463957bb7dd1401858e07a8f6836d957d2b75e881eace365829998b54e
+    name: server-files-public
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/server-files-public-0.1.10/server-files-public-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T16:41:44.188676246Z"
     description: A Helm chart for Kubernetes of server-files-public
     digest: a7e70fa0d639c755eb648e69fb99ba95c62a3a188a939654f408e773aba6fe69
@@ -432,6 +543,23 @@ entries:
     - https://github.com/kube-helm/charts/releases/download/server-files-public-0.1.0/server-files-public-0.1.0.tgz
     version: 0.1.0
   staff:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.572243637Z"
+    dependencies:
+    - name: web-admin-staff
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-staff-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: db3de5352316e97b5122c78ac4e85f9ed4ed90b8f6764e645ad6544478374646
+    name: staff
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/staff-0.1.10/staff-0.1.10.tgz
+    version: 0.1.10
   - apiVersion: v2
     appVersion: 1.16.0
     created: "2025-02-10T16:41:44.388446527Z"
@@ -486,6 +614,29 @@ entries:
   user:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.685236964Z"
+    dependencies:
+    - name: web-user
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-user-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: web-admin-user
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-user-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: d0470caa6cf9a27e3140f09f67ce5f8db57828157eb5667b42f96a73b8fe405a
+    name: user
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/user-0.1.10/user-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-02-10T16:41:44.615961202Z"
     dependencies:
     - name: web-user
@@ -530,4 +681,58 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-10T16:41:44.616024169Z"
+  vinfast:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.798835335Z"
+    dependencies:
+    - name: web-user-vinfast
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-vinfast-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: server-vinfast-public
+      repository: file://./charts/server-file
+      version: 0.1.0
+    - name: web-admin-vinfast
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-vinfast-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 68720092eccd46ca89edffc0f01937c5a2f5084c9960a542459465e7e25841b7
+    name: vinfast
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/vinfast-0.1.1/vinfast-0.1.1.tgz
+    version: 0.1.1
+  vinfast-indonesia:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-05T08:37:24.904094723Z"
+    dependencies:
+    - name: web-user
+      repository: file://./charts/web-client
+      version: 0.1.0
+    - name: server-public
+      repository: file://./charts/server-public
+      version: 0.1.0
+    - name: server-public
+      repository: file://./charts/server-file
+      version: 0.1.0
+    - name: web-admin
+      repository: file://./charts/web-admin
+      version: 0.1.0
+    - name: server-admin
+      repository: file://./charts/server-admin
+      version: 0.1.0
+    description: A Helm chart for Kubernetes
+    digest: 33faa2f8a91f693e184454733b218a8d3c94cc9420cd132af846cce0d765f1bc
+    name: vinfast-indonesia
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/vinfast-indonesia-0.1.1/vinfast-indonesia-0.1.1.tgz
+    version: 0.1.1
+generated: "2025-04-05T08:37:24.904180725Z"
