@@ -4,6 +4,27 @@ global:
     repository: hub.viewboost.vn/affiliate-products
     pullPolicy: Always
     tag: "latest"
-  infisical_project_id: "f5515ba5-eca6-4514-8858-2bd0496f58a5"
+  infisical_project_id: "1ffa30db-eacf-452d-aa27-4d27edbb5eae"
   imagePullSecrets:
     - name: registry-affiliate-products
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_admin:
+        host: api.toibit.dev
+        path: /user/admin
+        pathType: ImplementationSpecific
+      server_public:
+        host: api.toibit.dev
+        path: /user/app
+        pathType: ImplementationSpecific
+      client:
+        host: user.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      admin:
+        host: admin.toibit.dev
+        path: /user
+        pathType: ImplementationSpecific

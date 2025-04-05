@@ -100,3 +100,14 @@ initContainer:
   registry:
     host: https://sec.viewboost.vn/api
     env:
+
+global:
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_public:
+        host: api.toibit.dev
+        path: /files/app
+        pathType: ImplementationSpecific

@@ -21,8 +21,36 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.12.1
+
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_SKIP_EXISTING: true
+
+      - name: Login to Harbor
+        run: |
+          echo "${{ secrets.HARBOR_PASSWORD }}" | helm registry login ${{ secrets.HARBOR_URL }} \
+            --username ${{ secrets.HARBOR_USERNAME }} \
+            --password-stdin
+
+      - name: Package and Push Charts
+        run: |
+          # Find all Chart.yaml files
+          find . -name Chart.yaml -type f -print0 | while IFS= read -r -d '' chart_file; do
+            chart_dir=$(dirname "$chart_file")
+            chart_name=$(yq eval '.name' "$chart_file")
+            chart_version=$(yq eval '.version' "$chart_file")
+            
+            echo "Processing chart: $chart_name"
+            
+            # Package the chart
+            helm package "$chart_dir"
+            
+            # Push to Harbor
+            helm push "${chart_name}-${chart_version}.tgz" "oci://${{ secrets.HARBOR_URL }}/${{ secrets.HARBOR_PROJECT }}/helm-charts"
+          done

@@ -1,0 +1,34 @@
+global:
+  env: develop
+  image:
+    repository: hub.toibit.dev/vcreator
+    pullPolicy: Always
+    tag: "latest"
+  infisical_project_id: "3361a456-511e-46fe-9794-e679f1153ec6"
+  imagePullSecrets:
+    - name: registry-affiliate-products-v2
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_admin:
+        host: vinfast-api-admin.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      server_public:
+        host: vinfast-api-app.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      server_file:
+        host: vinfast-api-file.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      client:
+        host: vcreator.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      admin:
+        host: vinfast-admin.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
