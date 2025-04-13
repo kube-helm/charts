@@ -1,12 +1,12 @@
 global:
   env: develop
   image:
-    repository: hub.viewboost.vn/affiliate-products
+    repository: hub.toibit.dev/affiliate-products
     pullPolicy: Always
     tag: "latest"
   infisical_project_id: "1ffa30db-eacf-452d-aa27-4d27edbb5eae"
   imagePullSecrets:
-    - name: registry-affiliate-products
+    - name: registry-affiliate-products-v2
   ingress:
     enabled: true
     annotations:
