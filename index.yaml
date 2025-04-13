@@ -501,6 +501,23 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/payment-0.1.0/payment-0.1.0.tgz
     version: 0.1.0
+  rag-api:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2025-04-13T07:23:34.509798026Z"
+    description: A Helm chart for RAG API service
+    digest: f944fce8d06f89e1660426299e5a76b883cc0a48eb6b7c13affcbad2cce41004
+    keywords:
+    - rag
+    - api
+    - nlp
+    maintainers:
+    - name: DevOps Team
+    name: rag-api
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/rag-api-0.1.0/rag-api-0.1.0.tgz
+    version: 0.1.0
   server-files-public:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -681,6 +698,17 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/user-0.1.0/user-0.1.0.tgz
     version: 0.1.0
+  vectordb:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2025-04-13T07:23:34.823231585Z"
+    description: A Helm chart for Kubernetes
+    digest: c6048b9c1e5f993f91a16154ed965fcffc5f54e238977fb2e0782509b381c2eb
+    name: vectordb
+    type: application
+    urls:
+    - https://github.com/kube-helm/charts/releases/download/vectordb-0.1.0/vectordb-0.1.0.tgz
+    version: 0.1.0
   vinfast:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -735,4 +763,4 @@ entries:
     urls:
     - https://github.com/kube-helm/charts/releases/download/vinfast-indonesia-0.1.1/vinfast-indonesia-0.1.1.tgz
     version: 0.1.1
-generated: "2025-04-05T08:37:24.904180725Z"
+generated: "2025-04-13T07:23:34.823307486Z"
