@@ -1,0 +1,30 @@
+global:
+  env: develop
+  image:
+    repository: hub.toibit.dev/affiliate-products
+    pullPolicy: Always
+    tag: "latest"
+  infisical_project_id: "ea281b97-d4f7-4ae0-9a3c-070f758ad232"
+  imagePullSecrets:
+    - name: registry-affiliate-products-v2
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_admin:
+        host: api.toibit.dev
+        path: /gaming/admin
+        pathType: ImplementationSpecific
+      server_public:
+        host: api.toibit.dev
+        path: /gaming/app
+        pathType: ImplementationSpecific
+      client:
+        host: minigame.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      admin:
+        host: admin.toibit.dev
+        path: /gaming
+        pathType: ImplementationSpecific

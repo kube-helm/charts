@@ -1,0 +1,37 @@
+global:
+  env: develop
+  image:
+    repository: hub.toibit.dev/affiliate-products
+    pullPolicy: Always
+    tag: "latest"
+  infisical:
+    projectSlug: "common-cqus"
+    secretsPath: "/backend"
+    hostAPI: "https://infisical.toibit.dev/api"
+    resyncInterval: 10
+    credentialsRef:
+      secretName: infisical-universal-auth-credentials
+      secretNamespace: affiliate-products
+  imagePullSecrets:
+    - name: registry-affiliate-products-v2
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_admin:
+        host: api.toibit.dev
+        path: /common/admin
+        pathType: ImplementationSpecific
+      server_public:
+        host: api.toibit.dev
+        path: /common/app
+        pathType: ImplementationSpecific
+      client:
+        host: account.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      admin:
+        host: admin.toibit.dev
+        path: /account
+        pathType: ImplementationSpecific

@@ -1,0 +1,34 @@
+global:
+  env: develop
+  image:
+    repository: hub.viewboost.vn/vcreator-indonesia
+    pullPolicy: Always
+    tag: "latest"
+  infisical_project_id: "a20fc5cc-2bb4-4d4a-ad61-a953bafc74ef"
+  imagePullSecrets:
+    - name: registry-vcreator-indonesia
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_admin:
+        host: api-admin.casevn.dev
+        path: /
+        pathType: ImplementationSpecific
+      server_public:
+        host: api.casevn.dev
+        path: /
+        pathType: ImplementationSpecific
+      server_file:
+        host: file.casevn.dev
+        path: /
+        pathType: ImplementationSpecific
+      client:
+        host: vcreator.casevn.dev
+        path: /
+        pathType: ImplementationSpecific
+      admin:
+        host: admin.casevn.dev
+        path: /
+        pathType: ImplementationSpecific

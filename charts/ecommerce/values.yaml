@@ -1,0 +1,30 @@
+global:
+  env: develop
+  image:
+    repository: hub.toibit.dev/affiliate-products
+    pullPolicy: Always
+    tag: "latest"
+  infisical_project_id: "14c82485-6dd8-40a8-b1e0-937fb00b4b8a"
+  imagePullSecrets:
+    - name: registry-affiliate-products-v2
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_admin:
+        host: api.toibit.dev
+        path: /ecommerce/admin
+        pathType: ImplementationSpecific
+      server_public:
+        host: api.toibit.dev
+        path: /ecommerce/app
+        pathType: ImplementationSpecific
+      client:
+        host: ecommerce.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      admin:
+        host: admin.toibit.dev
+        path: /ecommerce
+        pathType: ImplementationSpecific

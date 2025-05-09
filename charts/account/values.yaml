@@ -1,0 +1,36 @@
+global:
+  env: develop
+  image:
+    repository: hub.toibit.dev/affiliate-products
+    pullPolicy: Always
+    tag: "latest"
+  infisical:
+    projectId: "31851095-9621-42e8-b97e-704c4b172484"
+    projectSlug: "account"
+    secretsPath: "/backend"
+    credentialsRef:
+      secretName: infisical-universal-auth-credentials
+      secretNamespace: affiliate-products
+  imagePullSecrets:
+    - name: registry-affiliate-products-v2
+  ingress:
+    enabled: true
+    annotations:
+      cert-manager.io/cluster-issuer: letsencrypt-http-prod
+    host:
+      server_admin:
+        host: api.toibit.dev
+        path: /account/admin
+        pathType: ImplementationSpecific
+      server_public:
+        host: api.toibit.dev
+        path: /account/app
+        pathType: ImplementationSpecific
+      client:
+        host: account.toibit.dev
+        path: /
+        pathType: ImplementationSpecific
+      admin:
+        host: admin.toibit.dev
+        path: /account
+        pathType: ImplementationSpecific
